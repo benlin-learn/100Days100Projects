@@ -1,0 +1,158 @@
+:root {
+  --mood-color-1: #2d6b5f;
+  --mood-color-2: #72e3a6;
+  --mood-color-3: #dff4c7;
+  --mood-color-4: #edbf98;
+  --mood-color-5: #ea3d36;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.main-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+}
+.main-title h2 {
+  font-size: 50px;
+  margin-bottom: 0;
+}
+.main-title h4 {
+  margin-top: 0;
+}
+
+.select-mood {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+.select-mood p {
+  font-size: 20px;
+}
+
+/* mood container */
+.select-mood .mood-container {
+  font-size: 40px;
+  /* padding: 10px 0; */
+}
+.select-mood .mood-container button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  padding: 5px;
+  margin: 10px;
+  transform: scale(1);
+  cursor: pointer;
+}
+.mood-1 {
+  color: var(--mood-color-1);
+}
+.mood-2 {
+  color: var(--mood-color-2);
+}
+.mood-3 {
+  color: var(--mood-color-3);
+}
+.mood-4 {
+  color: var(--mood-color-4);
+}
+.mood-5 {
+  color: var(--mood-color-5);
+}
+
+.select-mood .mood-container button i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.select-mood .mood-container button:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s;
+}
+.select-mood .mood-container button:active {
+  transform: scale(0.8);
+  transition: transform 0.3s;
+}
+.select-mood .mood-container button.selected {
+  transform: scale(1.2);
+}
+
+.select-mood .mood-container button.mood-1.selected {
+  background-color: var(--mood-color-1);
+}
+.select-mood .mood-container button.mood-2.selected {
+  background-color: var(--mood-color-2);
+}
+.select-mood .mood-container button.mood-3.selected {
+  background-color: var(--mood-color-3);
+}
+.select-mood .mood-container button.mood-4.selected {
+  background-color: var(--mood-color-4);
+}
+.select-mood .mood-container button.mood-5.selected {
+  background-color: var(--mood-color-5);
+}
+.select-mood .mood-container button.selected i {
+  color: #fff;
+}
+
+/* calendar */
+.months_container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: 20px;
+  row-gap: 20px;
+  padding: 3rem 0;
+}
+.months {
+  width: 280px;
+  text-align: center;
+}
+.week_days_container {
+  display: flex;
+  /* width: 100%; */
+}
+.week_days {
+  /* background-color: #fa0; */
+  width: 40px;
+  margin: 1px;
+  margin-bottom: 1rem;
+}
+.days_container {
+  display: flex;
+
+  flex-wrap: wrap;
+  width: 280px;
+  /* background-color: #fa0; */
+}
+
+.days {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: #ccc; */
+  /* padding: 5px; */
+  width: 30px;
+  padding: 1px;
+  margin: 1px 5px;
+}
+.days span {
+  background-color: #333;
+  color: #fff;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  font-size: 10px;
+  cursor: pointer;
+}
