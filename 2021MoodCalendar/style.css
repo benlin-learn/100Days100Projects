@@ -145,7 +145,7 @@
   margin: 1px 5px;
 }
 .days span {
-  background-color: #333;
+  background-color: #777;
   color: #fff;
   display: inline-flex;
   justify-content: center;
@@ -155,4 +155,28 @@
   border-radius: 50%;
   font-size: 10px;
   cursor: pointer;
+}
+.days span:hover {
+  transform: scale(1.1);
+}
+.sideBtn {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  width: 40px;
+  height: 40px;
+  outline: none;
+  border: none;
+  border-radius: 10px 0 0 10px;
+  cursor: pointer;
+}
+#randomBtn {
+  top: 70px;
+  background-color: var(--mood-color-2);
+  color: #fff;
+}
+#clearBtn {
+  top: 120px;
+  background-color: #777;
+  color: #fff;
 }

@@ -1,4 +1,11 @@
 const currentYear = moment().get('year');
+
+const moodBtn = document.querySelectorAll('.mood-container button');
+
+const randomBtn = document.querySelector('#randomBtn');
+const clearBtn = document.querySelector('#clearBtn');
+
+// utilities - Mood
 let currentMood = '';
 const moodList = {
   'mood-1': '#2d6b5f',
@@ -7,19 +14,11 @@ const moodList = {
   'mood-4': '#edbf98',
   'mood-5': '#ea3d36'
 };
-console.log(moodList[currentMood]);
 const MoodRegex = /(mood-[0-9])/gi;
-const moodBtn = document.querySelectorAll('.mood-container button');
 
-function clearBtnSelect() {
-  moodBtn.forEach((btn) => {
-    if (btn.classList.contains('selected')) {
-      btn.classList.remove('selected');
-      currentMood = '';
-    }
-  });
-}
+// event listener
 
+// mood button event handler
 moodBtn.forEach((btn) => {
   btn.addEventListener('click', (e) => {
     e.preventDefault();
@@ -36,16 +35,32 @@ moodBtn.forEach((btn) => {
   });
 });
 
+// render day blocks event handler
 function renderDaysEvent() {
   const days = document.querySelectorAll('.days span');
   days.forEach((day) => {
     day.addEventListener('click', (e) => {
       if (!currentMood) {
-        e.target.style.backgroundColor = '#333';
+        e.target.style.backgroundColor = '#777';
       }
       // console.log(currentMood);
       e.target.style.backgroundColor = moodList[currentMood];
     });
+  });
+}
+
+// random button event listener
+randomBtn.addEventListener('click', randomDayColor);
+// clear button event listener
+clearBtn.addEventListener('click', clearDayColor);
+
+// clear 'selected' class in the button
+function clearBtnSelect() {
+  moodBtn.forEach((btn) => {
+    if (btn.classList.contains('selected')) {
+      btn.classList.remove('selected');
+      currentMood = '';
+    }
   });
 }
 
@@ -99,7 +114,7 @@ function renderMonth(currentYear) {
 
   document.querySelector('.months_container').innerHTML = output;
 }
-
+// render days block in the calendar
 function renderDays(firstWeekDay, lastDay) {
   // firstWeekDay - the first weekday of the month
   // lastDay - the last date of the month
@@ -117,6 +132,24 @@ function renderDays(firstWeekDay, lastDay) {
   }
 
   return output;
+}
+
+// random day's color
+function randomDayColor() {
+  const days = document.querySelectorAll('.days span');
+  days.forEach((day) => {
+    let seed = Math.floor(Math.random() * Math.floor(5)) + 1;
+    // console.log(seed);
+    day.style.backgroundColor = moodList[`mood-${seed}`];
+  });
+}
+
+// clear day's color
+function clearDayColor() {
+  const days = document.querySelectorAll('.days span');
+  days.forEach((day) => {
+    day.style.backgroundColor = '#777';
+  });
 }
 
 renderMonth(currentYear);
