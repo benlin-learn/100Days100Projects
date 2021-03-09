@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css"
+      integrity="sha512-q3eWabyZPc1XTCmF+8/LuE1ozpg5xxn7iO89yfSOd5/oKvyqLngoNGsx8jq92Y8eXJ/IRxQbEC+FGSYxtk2oiw=="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Password Generator</title>
+  </head>
+  <body>
+    <div id="generatorPanel">
+      <h1 class="title">Password Generator</h1>
+
+      <div class="result-output">
+        <span id="result"></span>
+        <button id="clipboard"><i class="far fa-copy"></i></button>
+      </div>
+      <div class="options">
+        <div class="option">
+          <label for="pw-length">Password length</label>
+          <input
+            type="number"
+            name="pw-length"
+            id="pw-length"
+            value="20"
+            min="4"
+            max="20"
+          />
+        </div>
+        <div class="option">
+          <label for="upper-letter">Include uppercase letters</label>
+          <input
+            type="checkbox"
+            name="upper-letter"
+            id="upper-letter"
+            checked
+          />
+        </div>
+        <div class="option">
+          <label for="lower-letter">Include lowercase letters</label>
+          <input
+            type="checkbox"
+            name="lower-letter"
+            id="lower-letter"
+            checked
+          />
+        </div>
+        <div class="option">
+          <label for="include-number">Include numbers</label>
+          <input
+            type="checkbox"
+            name="include-number"
+            id="include-number"
+            checked
+          />
+        </div>
+        <div class="option">
+          <label for="include-symbol">Include symbols</label>
+          <input
+            type="checkbox"
+            name="include-symbol"
+            id="include-symbol"
+            checked
+          />
+        </div>
+      </div>
+      <button id="generateBtn">Generate password</button>
+    </div>
+
+    <script src="./main.js"></script>
+  </body>
+</html>
