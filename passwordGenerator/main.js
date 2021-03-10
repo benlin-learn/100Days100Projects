@@ -17,7 +17,22 @@ clipboard.addEventListener('click', () => {
     return;
   }
   // function copy password clipboard
-  // ~~
+  // 1. clipboard.js
+  // 2. stack overflow solutions -
+  // https://stackoverflow.com/questions/400212/how-do-i-copy-to-the-clipboard-in-javascript#
+  let textArea = document.createElement('textarea');
+  textArea.value = output.textContent;
+  document.body.appendChild(textArea);
+  textArea.focus();
+  textArea.select();
+  try {
+    var successful = document.execCommand('copy');
+    var msg = successful ? 'successful' : 'unsuccessful';
+    console.log('Copying text command was ' + msg);
+  } catch (err) {
+    console.log('Oops, unable to copy');
+  }
+  document.body.removeChild(textArea);
   alert('Password has been copied to clipboard');
 });
 function typeGenerate(options) {
